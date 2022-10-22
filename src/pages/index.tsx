@@ -25,37 +25,41 @@ console.log({tasks});
   return (
     <Layout>
       <Header />
-       <Pagination
-        className={styles.paginationBar}
-        currentPage={currentPage}
-        totalCount={tasks.length}
-        pageSize={PageSize}
-        onPageChange={page => setCurrentPage(page)}
-      />
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Título</th>
-            <th>Data</th>
-            <th>Valor</th>
-            <th>Pago</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentTableData.map(item => {
-            return (
-              <tr>
-                <td>{item.name}</td>
-                <td>{item.title}</td>
-                <td>{item.date}</td>
-                <td>{item.value}</td>
-                <td><input type = "checkbox" id = "isPayed" name = "payment" checked="`${item.isPayed}`"></input></td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+
+      <h1 className={styles.title}>Meus pagamentos</h1>
+      <main className={styles.content}>
+        <Pagination
+          className={styles.paginationBar}
+          currentPage={currentPage}
+          totalCount={tasks.length}
+          pageSize={PageSize}
+          onPageChange={page => setCurrentPage(page)}
+        />
+        <table className={styles.table}>
+          <thead className={styles.tableHeader}>
+            <tr>
+              <th>Nome</th>
+              <th>Título</th>
+              <th>Data</th>
+              <th>Valor</th>
+              <th>Pago</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentTableData.map(item => {
+              return (
+                <tr className={styles.tableItem}>
+                  <td>{item.name}</td>
+                  <td>{item.title}</td>
+                  <td>{item.date}</td>
+                  <td>{item.value}</td>
+                  <td><input type = "checkbox" id = "isPayed" name = "payment" checked="`${item.isPayed}`"></input></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </main>
     </Layout>
   )
 }
