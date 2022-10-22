@@ -1,0 +1,45 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actionSection {
+    display: flex;
+    flex-direction: column;
+    background: #F2F2F2;
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #333333;
+}
+
+.loginInput {
+    height: 54px;
+    background: rgba(0, 0, 0, 0.12);
+    width: 326px;
+    border-radius: 3px;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    margin-bottom: 30px;
+}
+
+.submit {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    height: 36px;
+    width: 326px;
+    background: #007DFE;
+    border-radius: 4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
