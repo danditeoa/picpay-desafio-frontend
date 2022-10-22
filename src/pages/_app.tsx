@@ -2,6 +2,8 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import "@fontsource/montserrat"
+import "@fontsource/roboto";
+import '../../styles/app.scss'
 
 function App({ Component, pageProps }: AppProps) {
   return (
