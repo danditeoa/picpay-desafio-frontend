@@ -1,18 +1,17 @@
 
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import '../../styles/globals.scss'
 import "@fontsource/montserrat"
-import "@fontsource/roboto";
-import '../../styles/app.scss'
+import "@fontsource/roboto"
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
         <title>picpay me contrata</title>
-        <link rel="shortcut icon" href="/public/next/icons/favicon.ico" />
         <link rel="icon-pic-pay" href="/public/next/icons/favicon.ico" />
-        <meta name="descrição" content="desafio técnico frontent do picpay" />
+        <meta name="descrição" content="desafio técnico frontent do picpay #mecontrata" />
       </Head>
       <Component {...pageProps} />
     </>
