@@ -1,26 +1,52 @@
 import { useAtom } from "jotai"
 import { isUserLoggedAtom } from "../../atoms/login.atom"
-import { LoginImageIcon } from "../Icons"
 import LogoPayFriends from "../LogoPayFriends/LogoPayFriends"
+import { useForm } from "react-hook-form";
 import styles from './login.module.scss'
 
-const Login = () => {
+type UserProps = {
+  email: string,
+  senha: string
+}
+const Login = ({}: UserProps) => {
   const [isUserLogged, setIsUserLogged] = useAtom(isUserLoggedAtom)
-  // if user === .... & password === ''
-  //  setIsLogged (true)...
-  //
-  //
+
+  const { register, handleSubmit, formState: { errors } } = useForm<UserProps>({
+  });
+    
+  const onSubmit = (data: UserProps) => {
+    if(data.email === 'usuario@gmail.com' && data.senha === 'usuario'){
+      setIsUserLogged(true)
+      alert(JSON.stringify(data));
+    }
+  };
 
   return (
     <div className={styles.container}>
-      <div className="actionSection">
-        <LogoPayFriends />
-        <h1 className={styles.title}>Bem vindo de volta</h1>
-        <input className={styles.loginInput} type="email" /> <br />
-        <input className={styles.loginInput} type="password" /> <br />
-        <button className={styles.submit} onClick={() => setIsUserLogged(true)}> login </button>
-      </div>
-      <LoginImageIcon />
+      <LogoPayFriends />
+      <h1 className={styles.title}>Bem vindo de volta</h1>
+      <form onSubmit={handleSubmit(onSubmit)}
+        action="/send-data-here" method="post" className="actionSection">
+        <label htmlFor="email">Email</label>
+        <input
+          className={styles.loginInput}
+          {...register("email")}
+          name="email"
+          type="email"
+          required
+          minLength={6}
+          maxLength={20} />
+        <label htmlFor="senha">Senha</label>
+        <input
+          className={styles.loginInput}
+          {...register("senha")}
+          name="senha"
+          type="password"
+          required
+          minLength={6}
+          maxLength={20} />
+        <button className={styles.submit} type="submit">Entrar</button>
+      </form >
     </div>
   )
 }
