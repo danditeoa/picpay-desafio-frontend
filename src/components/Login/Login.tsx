@@ -8,7 +8,7 @@ type UserProps = {
   email: string,
   senha: string
 }
-const Login = ({}: UserProps) => {
+const Login = () => {
   const [isUserLogged, setIsUserLogged] = useAtom(isUserLoggedAtom)
 
   const { register, handleSubmit, formState: { errors } } = useForm<UserProps>({
