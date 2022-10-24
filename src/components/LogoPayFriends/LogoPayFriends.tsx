@@ -1,10 +1,17 @@
-import styles from '../Header/header.module.scss'
+import { isUserLoggedAtom } from '../../atoms/login.atom'
+import classNames from 'classnames'
+import styles from './logoPayFriends.module.scss'
 
 const LogoPayFriends = () => {
 
+  const cx = classNames.bind(styles);
   return (
-    <div className={styles.payfriends}>
-        <b className={styles.pay}>Pay</b>Friends
+    <div className={cx(styles.payfriends, {
+      [styles.whiteLogo]: isUserLoggedAtom,
+    })}>
+      <b className={cx(styles.payColorLogo, {
+        [styles.payWhiteLogo]: !isUserLoggedAtom,
+      })}>Pay</b>Friends
     </div>
   );
 };
