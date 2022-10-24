@@ -1,9 +1,10 @@
 # PayFriends React
 
 <br />
-<p align="center">
-    <img src="./images/payfriends.png" alt="Logo payfriends" width="100">
-</p>
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/33880852/197557818-511bee4f-0429-403c-9191-701365c3209e.png" alt="Logo payfriends" width="200">
+</div>
+
 <p align="center">
   <a href="#o-que-é">O que é</a> •
   <a href="#instalação">Instalação</a> •
