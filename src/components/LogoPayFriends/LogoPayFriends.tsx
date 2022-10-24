@@ -1,16 +1,19 @@
 import { isUserLoggedAtom } from '../../atoms/login.atom'
 import classNames from 'classnames'
 import styles from './logoPayFriends.module.scss'
+import { useAtom } from 'jotai';
 
 const LogoPayFriends = () => {
-
+  const [isUserLogged, setIsUserLogged] = useAtom(isUserLoggedAtom)
+  console.log(isUserLogged);
   const cx = classNames.bind(styles);
+
   return (
     <div className={cx(styles.payfriends, {
-      [styles.whiteLogo]: isUserLoggedAtom,
+      [styles.whiteLogo]: isUserLogged,
     })}>
       <b className={cx(styles.payColorLogo, {
-        [styles.payWhiteLogo]: !isUserLoggedAtom,
+        [styles.payWhiteLogo]: isUserLogged,
       })}>Pay</b>Friends
     </div>
   );
