@@ -8,7 +8,12 @@
 .actionSection {
     display: flex;
     flex-direction: column;
-    background: #F2F2F2;
+    margin-right: 65px;
+    margin-left: 65px;
+}
+.actionForm {
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -17,12 +22,11 @@
     font-weight: 600;
     font-size: 30px;
     line-height: 37px;
-    color: #333333;
 }
 
 .loginInput {
     height: 54px;
-    background: rgba(0, 0, 0, 0.12);
+    background: transparent;
     width: 326px;
     border-radius: 3px;
     border: 1.5px solid rgba(0, 0, 0, 0.12);
@@ -42,4 +46,14 @@
     text-transform: uppercase;
     font-size: 14px;
     cursor: pointer;
+}
+
+.image {
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 100vh;
+    width: 76%;
 }
