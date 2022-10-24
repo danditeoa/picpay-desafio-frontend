@@ -2,7 +2,8 @@
 
 <br />
 <p align="center">
-    <img src="./public/images/payfriends.png" alt="Logo payfriends" width="100">
+    <img src="./images/payfriends.png" alt="Logo payfriends" width="100">
+</p>
 <p align="center">
   <a href="#o-que-é">O que é</a> •
   <a href="#instalação">Instalação</a> •
