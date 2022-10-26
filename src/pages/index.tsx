@@ -65,9 +65,6 @@ console.log({tasks});
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  // const tasks = await fetch("http://localhost:3000/tasks").then((res) =>
-  //   console.log(res)
-  // )
 
   const tasks = await fetch("http://localhost:4000/tasks").then((response) =>
    response.json()
