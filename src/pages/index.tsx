@@ -21,7 +21,6 @@ const Payments: NextPage<Props> = ({ tasks }) => {
     const lastPageIndex = firstPageIndex + PageSize;
     return tasks.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
-console.log({tasks});
   return (
     <Layout>
       <Header />
