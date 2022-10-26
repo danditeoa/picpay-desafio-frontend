@@ -5,7 +5,6 @@ import { useAtom } from 'jotai';
 
 const LogoPayFriends = () => {
   const [isUserLogged, setIsUserLogged] = useAtom(isUserLoggedAtom)
-  console.log(isUserLogged);
   const cx = classNames.bind(styles);
 
   return (
