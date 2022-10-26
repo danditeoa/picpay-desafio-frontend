@@ -18,7 +18,6 @@ const Login = () => {
   const onSubmit = (data: UserProps) => {
     if(data.email === 'usuario@gmail.com' && data.senha === 'usuario'){
       setIsUserLogged(true)
-      alert(JSON.stringify(data));
     }
   };
 
