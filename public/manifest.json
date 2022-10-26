@@ -1,0 +1,15 @@
+{
+    "name": "PicPayFriends",
+    "short_name": "Payfriends",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "type": "image/ico"
+      }
+    ],
+    "background_color": "#fafafa",
+    "description": "Projeto utilizando Typescript, React, NextJS e JSON serve!",
+    "display": "fullscreen",
+    "start_url": "/",
+    "theme_color": "#fafafa"
+  }
