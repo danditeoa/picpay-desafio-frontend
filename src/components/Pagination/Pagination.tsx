@@ -8,7 +8,7 @@ import { ArrowRightIcon } from '../Icons/ArrowRightIcon/ArroRightIcon';
 type PaginationProps = {
   onPageChange: any,
   totalCount: any,
-  siblingCount:number,
+  siblingCount: number,
   currentPage: number,
   pageSize: number,
   className: string
@@ -31,7 +31,7 @@ const Pagination = ({
     pageSize
   });
 
-  if(paginationRange) {
+  if (paginationRange) {
     if (currentPage === 0 || paginationRange.length < 2) {
       return null;
     }
@@ -57,12 +57,12 @@ const Pagination = ({
           className={Styles.arrow}
           onClick={onPrevious}
         >
-        	<ArrowLeftIcon />
-      </li>
+          <ArrowLeftIcon />
+        </li>
       )}
       {paginationRange?.map(pageNumber => {
         if (pageNumber === DOTS) {
-          return <li className="item dots">&#8230;</li>;
+          return <li className={Styles.itemDots}>&#8230;</li>;
         }
 
         return (

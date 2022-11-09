@@ -31,6 +31,7 @@ const Payments: NextPage<Props> = ({ tasks }) => {
           totalCount={tasks.length}
           pageSize={PageSize}
           onPageChange={(page: SetStateAction<number>) => setCurrentPage(page)} siblingCount={0} />
+
         <table className={styles.table}>
           <thead className={styles.tableHeader}>
             <tr>
@@ -44,7 +45,7 @@ const Payments: NextPage<Props> = ({ tasks }) => {
           <tbody>
             {currentTableData.map(item => {
               return (
-                <tr className={styles.tableItem}>
+                <tr className={styles.tableItem} key={item.id}>
                   <td>{item.name}</td>
                   <td>{item.title}</td>
                   <td>{item.date}</td>
