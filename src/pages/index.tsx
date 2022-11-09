@@ -1,8 +1,6 @@
-import { useAtom } from "jotai"
 import { Task } from "../models/Task.model"
 import type { GetServerSideProps, NextPage } from "next"
-import { SetStateAction, useEffect, useMemo, useState } from "react"
-import { isUserLoggedAtom } from "../atoms/login.atom"
+import { SetStateAction, useMemo, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styles from './index.module.scss';
 import Pagination from "../components/Pagination/Pagination"
@@ -32,8 +30,7 @@ const Payments: NextPage<Props> = ({ tasks }) => {
           currentPage={currentPage}
           totalCount={tasks.length}
           pageSize={PageSize}
-          onPageChange={page => setCurrentPage(page)}
-        />
+          onPageChange={(page: SetStateAction<number>) => setCurrentPage(page)} siblingCount={0} />
         <table className={styles.table}>
           <thead className={styles.tableHeader}>
             <tr>
@@ -52,7 +49,7 @@ const Payments: NextPage<Props> = ({ tasks }) => {
                   <td>{item.title}</td>
                   <td>{item.date}</td>
                   <td>{item.value}</td>
-                  <td><input type = "checkbox" id = "isPayed" name = "payment" checked="`${item.isPayed}`"></input></td>
+                  <td><input type="checkbox" id="isPayed" name="payment"></input></td>
                 </tr>
               );
             })}
@@ -66,7 +63,7 @@ const Payments: NextPage<Props> = ({ tasks }) => {
 export const getServerSideProps: GetServerSideProps = async () => {
 
   const tasks = await fetch("http://localhost:4000/tasks").then((response) =>
-   response.json()
+    response.json()
   )
   console.log(tasks)
   return {
