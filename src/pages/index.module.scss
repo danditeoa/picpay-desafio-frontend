@@ -37,12 +37,16 @@
 }
 
 .tableHeader {
-  font-weight: 500;
-  text-align: left;
-  border-bottom: 2px solid #CFDCE5;
-  height: 50px;
+    font-weight: 500;
+    text-align: left;
+    border-bottom: 2px solid #CFDCE5;
+    height: 50px;
+    position: relative;
+    left: 15px;
 }
 
 .tableItem {
     height: 81px;
+    position: relative;
+    left: 15px;
 }
