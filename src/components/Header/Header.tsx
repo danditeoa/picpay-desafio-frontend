@@ -10,15 +10,21 @@ const Header = () => {
   return (
     <header className={styles.container}>
       <LogoPayFriends />
-      <a onClick={() => setIsUserLogged(false)} className={styles.logout}>
-        <Image
-          className={styles.profilePicture}
-          src="https://image.shutterstock.com/image-photo/profile-picture-smiling-millennial-asian-600w-1836020740.jpg"
-          alt="imagem do perfil do usuario"
-        />
-        <p>DESLOGAR</p>
-      </a>
-    </header>
+      <div className={styles.profileSection}>
+        <div className={styles.profilePicture}>
+          <Image className={styles.image}
+            src="https://image.shutterstock.com/image-photo/profile-picture-smiling-millennial-asian-600w-1836020740.jpg"
+            alt="imagem do perfil do usuario"
+            layout='fill'
+            sizes="100vw"
+            objectFit='cover'
+          />
+        </div>
+        <a onClick={() => setIsUserLogged(false)} className={styles.logout}>
+          <p>DESLOGAR</p>
+        </a>
+      </div>
+    </header >
   );
 };
 
